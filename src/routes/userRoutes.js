@@ -5,19 +5,19 @@ const router = express.Router()
 
 // Only admin
 router
-    .get("/admin", verifyToken, (req, res) => {
+    .get("/admin", verifyToken, authorizeRoles("admin"), (req, res) => {
         res.json({ message: `Welcome Admin` })
     })
 
 // Admin and manager
 router
-    .get("/manager", verifyToken, (req, res) => {
+    .get("/manager", verifyToken, authorizeRoles("admin", "manager"), (req, res) => {
         res.json({ message: `Welcome Manager` })
     })
 
 // All users
 router
-    .get("/user", verifyToken, (req, res) => {
+    .get("/user", verifyToken, authorizeRoles("admin", "manager", "user"), (req, res) => {
         res.json({ message: `Welcome` })
     })
 

@@ -127,3 +127,6 @@ Once that second layer is added, the process splits into two steps:
 2. **Authorization (`authorizedRoles("admin")`):** "Does your wristband say 'Admin' on it?" $\rightarrow$ *No, it says 'Manager'. Access Denied.*
 
 Hopefully, this clears up how those moving parts lock together! Do you want to dive deeper into how frontend apps store and send these tokens automatically, or do you have more questions about the middleware code?
+
+Why do we always define a route as /api/route_name?
+Can't it just be /route_name?
